@@ -1,0 +1,6 @@
+2022-10-06 23:06:27.093 +06:00 [INF] Application Starting up
+2022-10-06 23:11:39.524 +06:00 [INF] User created a new account with password.
+2022-10-06 23:14:20.969 +06:00 [WRN] User cannot sign in without a confirmed account.
+2022-10-06 23:18:23.425 +06:00 [WRN] Invalid password for user.
+2022-10-06 23:18:23.425 +06:00 [WRN] User failed to provide the correct password.
+2022-10-06 23:18:36.882 +06:00 [INF] User logged in.

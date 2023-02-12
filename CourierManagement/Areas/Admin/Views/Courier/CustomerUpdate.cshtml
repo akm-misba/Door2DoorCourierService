@@ -1,0 +1,126 @@
+﻿@model EditCustomerModel
+@{
+    ViewData["Title"] = "UpdateCustomer";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout3.cshtml";
+}
+<!-- Content Header (Page header) -->
+<header class="navigation fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand font-tertiary h3" href="UserProfile">Door2Door</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navigation">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/admin/courier/UserProfile">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="CustomerUpdate/@Html.ViewData["id"]">Edit Profile</a>
+                </li>
+                <li class="nav-item">
+                    @*<a class="nav-link" href="Index">Logout</a>*@
+                    <a class="nav-link" href="https://localhost:44383/admin/courier/index">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<section class="hero-area bg-primary" id="parallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-11 mx-auto">
+                <h1 class="text-white font-tertiary">
+                    Update Profile
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="layer-bg w-100">
+        <img class="img-fluid w-100" src="/User/images/illustrations/leaf-bg.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l2">
+        <img src="/User/images/illustrations/dots-cyan.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l3">
+        <img src="/User/images/illustrations/leaf-orange.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l4">
+        <img src="/User/images/illustrations/dots-orange.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l5">
+        <img src="/User/images/illustrations/leaf-yellow.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l6">
+        <img src="/User/images/illustrations/leaf-cyan.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l7">
+        <img src="/User/images/illustrations/dots-group-orange.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l8">
+        <img src="/User/images/illustrations/leaf-pink-round.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l9">
+        <img src="/User/images/illustrations/leaf-cyan-2.png" alt="bg-shape">
+    </div>
+    <!-- social icon -->
+    <ul class="list-unstyled ml-5 mt-3 position-relative zindex-1">
+        <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-facebook"></i></a></li>
+        <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-instagram"></i></a></li>
+        <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-dribbble"></i></a></li>
+        <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-twitter"></i></a></li>
+    </ul>
+    <!-- /social icon -->
+</section>
+<div align="center">
+            <div class="col-md-8">
+                <div class="card card-info">
+                    <div class="card-header">
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form class="form-horizontal" method="post" asp-controller="Courier"
+                          asp-action="CustomerUpdate" asp-antiforgery="true">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label asp-for="Name" class="col-sm-2 col-form-label">Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" asp-for="Name" class="form-control"
+                                           id="Name" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Email" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="Email"
+                                           id="Email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Password" class="col-sm-2 col-form-label">Password</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="Password"
+                                           id="Password" placeholder="Password">
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary w-80 "style="float: left;">Edit</button>
+                            <a asp-action="UserProfile" asp-controller="Courier"
+                               class="btn btn-default float-right">Back</a>
+                        </div>
+                        <!-- /.card-footer -->
+                    </form>
+                </div>
+            </div>
+ </div>
+
+
+

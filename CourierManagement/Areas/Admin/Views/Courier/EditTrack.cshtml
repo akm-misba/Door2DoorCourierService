@@ -1,0 +1,76 @@
+﻿@model EditTrackModel
+@{
+    ViewData["Title"] = "EditTrack";
+}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Edit An Existing Tracking Details</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="DashBoard">DashBoard</a></li>
+                    <li class="breadcrumb-item active">Add Track</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">Edit An Existing Tracking Details</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form class="form-horizontal" method="post" asp-controller="Courier"
+                          asp-action="EditTrack" asp-antiforgery="true">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label asp-for="Customer_id" class="col-sm-2 col-form-label">Customer Id</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="Customer_id"
+                                           id="Customer_id" placeholder="Customer Id">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Order_id" class="col-sm-2 col-form-label">Order Id</label>
+                                <div class="col-sm-10">
+                                    <input type="number" asp-for="Order_id" class="form-control"
+                                           id="Order_id" placeholder="Order Id">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Status" class="col-sm-2 col-form-label">Status</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="Status"
+                                           id="Status" placeholder="Status">
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-info">Edit</button>
+                            <a asp-action="ManageTrack" asp-controller="Courier"
+                               class="btn btn-default float-right">Back</a>
+                        </div>
+                        <!-- /.card-footer -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

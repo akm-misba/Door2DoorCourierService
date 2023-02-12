@@ -1,0 +1,176 @@
+﻿@model PriceCalculationModel
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout2.cshtml";
+}
+<!-- Topbar Start -->
+<div class="container-fluid bg-dark">
+    <div class="row py-2 px-lg-5">
+        <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+            <div class="d-inline-flex align-items-center text-white">
+                <small><i class="fa fa-phone-alt mr-2"></i>+018 111 222 33</small>
+                <small class="px-3">|</small>
+                <small><i class="fa fa-envelope mr-2"></i>Door2Door@gmail.com</small>
+            </div>
+        </div>
+        <div class="col-lg-6 text-center text-lg-right">
+            <div class="d-inline-flex align-items-center">
+                <a class="text-white px-2" href="">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="text-white px-2" href="">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="text-white px-2" href="">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a class="text-white px-2" href="">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="text-white pl-2" href="">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+<!-- Navbar Start -->
+<div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
+        <a href="Index" class="navbar-brand ml-lg-3">
+            <h1 class="m-0 display-5 text-uppercase text-primary"><i class="fa fa-truck mr-2"></i>Door2Door</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+            <div class="navbar-nav m-auto py-0">
+                <a href="Index" class="nav-item nav-link">Home</a>
+                <a href="About" class="nav-item nav-link">About</a>
+                <a href="Service" class="nav-item nav-link">Service</a>
+                <a href="Price" class="nav-item nav-link active">Price</a>
+                <a href="Contact" class="nav-item nav-link">Contact</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Account</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="CustomerLogin" class="dropdown-item">User </a>
+                        <a href="CourierLogin" class="dropdown-item">Courier</a>
+                        <a href="Login" class="dropdown-item">Admin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid mb-5">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-3">Price</h1>
+        <div class="d-inline-flex align-items-center text-white">
+            <p class="m-0"><a class="text-white" href="">Home</a></p>
+            <i class="fa fa-circle px-3"></i>
+            <p class="m-0">Price</p>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+<!-- Pricing Plan Start -->
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-2">
+            <h6 class="text-primary text-uppercase font-weight-bold">Pricing Plan</h6>
+            <h1 class="mb-4">Affordable Pricing Packages</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-5">
+                <div class="bg-secondary">
+                    <div class="text-center p-4">
+                        <h1 class="display-4 mb-0">
+                            <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">BDT</small>49<small class="align-bottom text-muted font-weight-medium" style="font-size: 16px; line-height: 40px;">/Kg</small>
+                        </h1>
+                    </div>
+                    <div class="bg-primary text-center p-4">
+                        <h3 class="m-0">By Air</h3>
+                    </div>
+                    <div class="d-flex flex-column align-items-center py-4">
+                        <p>Cloth</p>
+                        <p>Paper</p>
+                        <p>Mobile</p>
+                        <p>Dry Food</p>
+                        <a href="CustomerLogin" class="btn btn-primary py-2 px-4 my-2">Order Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="bg-secondary">
+                    <div class="text-center p-4">
+                        <h1 class="display-4 mb-0">
+                            <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">BDT</small>39<small class="align-bottom text-muted font-weight-medium" style="font-size: 16px; line-height: 40px;">/Kg</small>
+                        </h1>
+                    </div>
+                    <div class="bg-primary text-center p-4">
+                        <h3 class="m-0">By Ocean</h3>
+                    </div>
+                    <div class="d-flex flex-column align-items-center py-4">
+                        <p>Wet Food</p>
+                        <p>Vehicle Parts</p>
+                        <p>Froozen Items</p>
+                        <p>Industrial Products</p>
+                        <a href="CustomerLogin" class="btn btn-primary py-2 px-4 my-2">Order Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="bg-secondary">
+                    <div class="text-center p-4">
+                        <h1 class="display-4 mb-0">
+                            <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">BDT</small>.59<small class="align-bottom text-muted font-weight-medium" style="font-size: 16px; line-height: 40px;">/Kg</small>
+                        </h1>
+                    </div>
+                    <div class="bg-primary text-center p-4">
+                        <h3 class="m-0">Land Trasport</h3>
+                    </div>
+                    <div class="d-flex flex-column align-items-center py-4">
+                        <p>Bike</p>
+                        <p>Food</p>
+                        <p>Cloth</p>
+                        <p>All types of Legal Products</p>
+                        <a href="CustomerLogin" class="btn btn-primary py-2 px-4 my-2">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pricing Plan End -->
+
+
+<div align="center" >
+    <div class="col-md-5">
+        <!-- Form Element sizes -->
+        <div class="card card-success">
+            <div class="card-header">
+                <h3 class="card-title">Total Cost</h3>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("Price", "Courier", FormMethod.Post, new { id = "submitForm" }))
+                {
+                    <fieldset>
+                        <h4>Quantity(kg): </h4>@Html.EditorFor(x => x.Quantity)<br /><br />
+                        <h4>Distance(km): </h4>@Html.EditorFor(x => x.Distance)<br /><br />
+                        <input class="btn btn-primary py-2 px-4 my-2" type="submit" value="By_Air" name="command" />
+                        <input class="btn btn-primary py-2 px-4 my-2" type="submit" value="By_Ocean" name="command" />
+                        <input class="btn btn-primary py-2 px-4 my-2" type="submit" value="Land_Transport" name="command" /><br /><br />
+                        @Html.Label("Total Cost is :BDT") @Html.DisplayFor(x => x.Cost)
+                    </fieldset>
+                }
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+    </div>
+</div>
+
+    

@@ -1,0 +1,117 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+@model AddHelpModel
+@{
+    ViewData["Title"] = "Place Question";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout3.cshtml";
+}
+<header class="navigation fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand font-tertiary h3" href="UserProfile">Door2Door</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navigation">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="UserProfile">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="AddHelp">Help</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Index">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<section class="hero-area bg-primary" id="parallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-11 mx-auto">
+                <h1 class="text-white font-tertiary">
+                    Hi! @*My Email*@ Write Down Message<br>
+                    @Accessor.HttpContext.Session.GetString("emailid")
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="layer-bg w-100">
+        <img class="img-fluid w-100" src="/User/images/illustrations/leaf-bg.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l2">
+        <img src="/User/images/illustrations/dots-cyan.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l3">
+        <img src="/User/images/illustrations/leaf-orange.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l4">
+        <img src="/User/images/illustrations/dots-orange.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l5">
+        <img src="/User/images/illustrations/leaf-yellow.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l6">
+        <img src="/User/images/illustrations/leaf-cyan.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l7">
+        <img src="/User/images/illustrations/dots-group-orange.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l8">
+        <img src="/User/images/illustrations/leaf-pink-round.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l9">
+        <img src="/User/images/illustrations/leaf-cyan-2.png" alt="bg-shape">
+    </div>
+    <!-- social icon -->
+    <ul class="list-unstyled ml-5 mt-3 position-relative zindex-1">
+        <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-facebook"></i></a></li>
+        <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-instagram"></i></a></li>
+        <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-dribbble"></i></a></li>
+        <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-twitter"></i></a></li>
+    </ul>
+    <!-- /social icon -->
+</section>
+<div align="center">
+    <div class="col-md-8 ">
+        <div class="card card-info">
+            <div class="card-header">
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form class="form-horizontal" method="post" asp-controller="Courier"
+                  asp-action="AddHelp" asp-antiforgery="true">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label asp-for="Customer_id" class="col-sm-2 col-form-label">Customer Id</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" asp-for="Customer_id"
+                                   id="Customer" placeholder="Customer id">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Message" class="col-sm-2 col-form-label">Message</label>
+                        <div class="col-sm-10">
+                            <input type="text" asp-for="Message" class="form-control"
+                                   id="Message" placeholder="Message">
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary w-80 " style="float: left;">Add</button>
+                    <a asp-action="UserProfile" asp-controller="Courier"
+                       class="btn btn-default float-right">Cancel</a>
+                </div>
+                <!-- /.card-footer -->
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

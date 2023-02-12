@@ -1,0 +1,112 @@
+﻿@model EditOrderModel
+@{
+    ViewData["Title"] = "EditOrder";
+}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Edit An Existing Order Details</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="DashBoard">DashBoard</a></li>
+                    <li class="breadcrumb-item active">Edit Order</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">Edit An Existing Order Details</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form class="form-horizontal" method="post" asp-controller="Courier"
+                          asp-action="EditOrder" asp-antiforgery="true">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label asp-for="Customer_id" class="col-sm-2 col-form-label">Customer Id</label>
+                                <div class="col-sm-10">
+                                    <input type="number" asp-for="Customer_id" class="form-control"
+                                           id="Customer_id" placeholder="Customer Id">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="From" class="col-sm-2 col-form-label">From</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="From"
+                                           id="From" placeholder="From">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="To" class="col-sm-2 col-form-label">To</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="To"
+                                           id="To" placeholder="To">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Source_to_office" class="col-sm-2 col-form-label">Source_to_office</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="Source_to_office"
+                                           id="source_to_office" placeholder="Courier Id">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Office_to_destination" class="col-sm-2 col-form-label">Office_to_dest.</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="Office_to_destination"
+                                           id="officeToDest" placeholder="Courier Id">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Amount" class="col-sm-2 col-form-label">Amount</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="Amount"
+                                           id="Amount" placeholder="Balance">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Transaction_id" class="col-sm-2 col-form-label">Transaction Id</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="Transaction_id"
+                                           id="Transaction_id" placeholder="From">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Payment" class="col-sm-2 col-form-label">Payment</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="Payment"
+                                           id="payment" placeholder="payment">
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-info">Edit</button>
+                            <a asp-action="ManageOrder" asp-controller="Courier"
+                               class="btn btn-default float-right">Back</a>
+                        </div>
+                        <!-- /.card-footer -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

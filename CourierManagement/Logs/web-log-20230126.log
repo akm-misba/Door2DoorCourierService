@@ -1,0 +1,10 @@
+2023-01-26 12:23:33.210 +06:00 [INF] Application Starting up
+2023-01-26 12:37:22.779 +06:00 [INF] Application Starting up
+2023-01-26 12:43:32.298 +06:00 [INF] Application Starting up
+2023-01-26 12:58:39.739 +06:00 [WRN] User password validation failed: PasswordRequiresUpper.
+2023-01-26 12:59:06.692 +06:00 [INF] User created a new account with password.
+2023-01-26 13:00:45.601 +06:00 [WRN] User cannot sign in without a confirmed account.
+2023-01-26 13:01:23.733 +06:00 [WRN] User cannot sign in without a confirmed account.
+2023-01-26 13:02:57.256 +06:00 [INF] Application Starting up
+2023-01-26 13:05:51.869 +06:00 [INF] User logged in.
+2023-01-26 13:16:12.583 +06:00 [INF] Application Starting up

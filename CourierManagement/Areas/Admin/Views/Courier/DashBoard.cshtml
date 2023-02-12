@@ -1,0 +1,108 @@
+﻿@using Microsoft.AspNetCore.Http
+@model CourierManagement.Areas.Admin.Models.MailMessage
+@inject IHttpContextAccessor Accessor
+
+@{ ViewData["Title"] = "DashBoard"; }
+
+<h1>DashBoard</h1>
+<div class="row">
+    <div class="col-lg-6 col-6">
+        <!-- small box -->
+        <div class="small-box bg-info">
+            <div class="inner">
+                <h3>@Html.ViewData["TOTALCUSTOMER"]</h3>
+
+                <p>Total Customer</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-bag"></i>
+            </div>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-6 col-6">
+        <!-- small box -->
+        <div class="small-box bg-success">
+            <div class="inner">
+                <h3>@Html.ViewData["TOTALCOURIER"]</h3>
+
+                <p>Total Courier</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+            </div>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-6 col-6">
+        <!-- small box -->
+        <div class="small-box bg-warning">
+            <div class="inner">
+                <h3>@Html.ViewData["TOTALORDER"]</h3>
+
+                <p>Total Order</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-person-add"></i>
+            </div>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-6 col-6">
+        <!-- small box -->
+        <div class="small-box bg-danger">
+            <div class="inner">
+                
+                    <h3>7</h3>
+                
+
+                <p>Branch</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+            </div>
+        </div>
+    </div>
+    <!-- ./col -->
+</div>
+
+<h1>Sending Email</h1>
+
+<div align="center">
+    <div class="col-md-6">
+
+        <form asp-action="DashBoard" enctype="multipart/form-data" style="border:blue; border-width:10px; border-style:dashed;">
+            <div class="mb-3">
+                <label asp-for="To" class="form-label">Email address</label>
+                <input asp-for="To" class="form-control" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cc" class="control-label"></label>
+                <input asp-for="Cc" class="form-control" />
+                <span asp-validation-for="Cc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bcc" class="control-label"></label>
+                <input asp-for="Bcc" class="form-control" />
+                <span asp-validation-for="Bcc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject" class="control-label"></label>
+                <input asp-for="Subject" class="form-control" />
+                <span asp-validation-for="Subject" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Body" class="control-label"></label>
+                <textarea asp-for="Body" class="form-control"></textarea>
+                <span asp-validation-for="Body" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Files" class="control-label"></label>
+                <input type="file" multiple="multiple" asp-for="Files" class="form-control" />
+                <span asp-validation-for="Files" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

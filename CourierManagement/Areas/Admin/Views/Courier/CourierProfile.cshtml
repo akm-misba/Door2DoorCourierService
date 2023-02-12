@@ -1,0 +1,167 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+@model OrderListForCourier
+@{
+    ViewData["Title"] = "Courier Profile";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout3.cshtml";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+}
+
+@section Scripts
+{
+    <script src="/admin/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#orders').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": "/Admin/Courier/GetOrderDataByCourier",
+
+                "columnDefs": [
+                    {
+                        "orderable": false,
+                        "targets": 6,
+                        "render": function (data, type, row) {
+
+                            return `<button type="submit" class="btn btn-info btn-sm" onclick="window.location.href='/admin/Courier/EditOrderByCourier/${data}'" value='${data}'>
+                                                <i class="fas fa-pencil-alt">
+                                                </i>
+                                                Edit
+                                            </button>`;
+                        }
+                    }
+                ]
+
+            });
+
+            
+        });
+    </script>
+}
+
+<header class="navigation fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand font-tertiary h3" href="UserProfile">Door2Door</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navigation">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="CourierProfile">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="CourierUpdate/@Html.ViewData["id"]">Edit Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Index">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<section class="hero-area bg-primary" id="parallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-11 mx-auto">
+                <h1 class="text-white font-tertiary">
+                    Hi! I’m <br> @Html.ViewData["username"] <br /> ID :
+                    @Html.ViewData["id"] <br />
+                    @Accessor.HttpContext.Session.GetString("emailid")
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="layer-bg w-100">
+        <img class="img-fluid w-100" src="/User/images/illustrations/leaf-bg.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l2">
+        <img src="/User/images/illustrations/dots-cyan.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l3">
+        <img src="/User/images/illustrations/leaf-orange.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l4">
+        <img src="/User/images/illustrations/dots-orange.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l5">
+        <img src="/User/images/illustrations/leaf-yellow.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l6">
+        <img src="/User/images/illustrations/leaf-cyan.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l7">
+        <img src="/User/images/illustrations/dots-group-orange.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l8">
+        <img src="/User/images/illustrations/leaf-pink-round.png" alt="bg-shape">
+    </div>
+    <div class="layer" id="l9">
+        <img src="/User/images/illustrations/leaf-cyan-2.png" alt="bg-shape">
+    </div>
+    <!-- social icon -->
+    <ul class="list-unstyled ml-5 mt-3 position-relative zindex-1">
+        <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-facebook"></i></a></li>
+        <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-instagram"></i></a></li>
+        <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-dribbble"></i></a></li>
+        <li class="mb-3"><a class="text-white" href="https://themefisher.com/"><i class="ti-twitter"></i></a></li>
+    </ul>
+    <!-- /social icon -->
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">All Orders</h4>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="orders" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Customer Id</th>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th>SourceToOffice</th>
+                                    <th>OfficeToDestinatioin</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tfoot>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Customer Id</th>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th>SourceToOffice</th>
+                                    <th>OfficeToDestinatioin</th>
+                                    <th>Action</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <partial name="_DeletePopupPartial" />
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
